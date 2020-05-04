@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 public class CodeGenerator {
 
     public static void main(String[] args) {
-        String tableName = "tb_users";
+        String tableName = "test";
         String moduleName = "moduleName";
         String parent = "com.example.demo";
 
@@ -28,10 +28,10 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.200.212:3306/crm?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false");
+        dsc.setUrl("jdbc:mysql://192.168.200.100:3306/crm?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("pwd");
+        dsc.setPassword("123456");
         mpg.setDataSource(dsc);
 
         // 包配置
