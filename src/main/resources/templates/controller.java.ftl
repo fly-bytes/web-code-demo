@@ -3,6 +3,7 @@ package ${package.Controller};
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Api;
 import com.example.demo.config.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,18 +43,21 @@ public class ${table.controllerName} {
     private ${table.serviceName} baseService;
 
     @GetMapping
+    @ApiOperation("查询")
     public ResponseMessage list(${entity} param) {
         List<${entity}> list = baseService.list(new QueryWrapper<>(param));
         return ResponseMessage.success(list);
     }
 
     @PostMapping
+    @ApiOperation("保存或更新")
     public ResponseMessage saveOrUpdate(${entity} param) {
         boolean success = baseService.saveOrUpdate(param);
         return ResponseMessage.success(success);
     }
 
     @DeleteMapping
+    @ApiOperation("删除")
     public ResponseMessage delete(Integer id) {
         boolean success = baseService.removeById(id);
         return ResponseMessage.success(success);

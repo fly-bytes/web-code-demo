@@ -10,12 +10,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Profile;
 
-@Profile({"dev"})
+@Profile({"dev", "test"})
 @Configuration
 @EnableAspectJAutoProxy
 @Aspect
 public class Monitor {
-    @Pointcut("execution(public * com.baomidou.mybatisplus.extension.service.IService.*(..))" )
+    @Pointcut("execution(public * com.baomidou.mybatisplus.extension.service.IService.*(..)) " +
+            "|| execution(public * com.baomidou.mybatisplus.core.mapper.BaseMapper.*(..))")
     public void monitor() {
     }
 

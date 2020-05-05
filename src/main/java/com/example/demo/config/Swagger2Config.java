@@ -8,6 +8,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -41,6 +42,7 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("web-code-demo")
                 .description("基础代码")
+                .contact(new Contact("liubingxu", "https://github.com/fly-bytes", "1274604226@qq.com"))
                 .termsOfServiceUrl("https://github.com/fly-bytes/web-code-demo")
                 .version("1.0")
                 .build();
